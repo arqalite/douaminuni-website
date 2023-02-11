@@ -1,21 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html class="h-full">
   <head>
     <title>Vila Doua Minuni Busteni</title>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height" />
-
-    <!-- <link data-trunk rel="copy-dir" href="assets/img">
-    <link data-trunk rel="copy-file" href="assets/img/favicon.ico">
-    <link data-trunk rel="copy-file" href="assets/js/sw.js">
-    <link data-trunk rel="copy-file" href="assets/js/manifest.json">
-    <link rel="manifest" href="manifest.json"> -->
-
-    <script>
-        var viewport = document.querySelector("meta[name=viewport]"); viewport.setAttribute("content", viewport.content + ", height=" + window.innerHeight), viewport.setAttribute("content", viewport.content + ", width=" + window.innerWidth);
-    </script>
+    <link data-trunk rel="rust" data-wasm-opt="z" />
+    <link data-trunk rel="css" href="assets/style.css" />
+    <link data-trunk rel="copy-dir" href="assets">
   </head>
 
-  <body id="main"></body>
+  <body id="main" class="flex flex-col h-full text-[2.5vh]" style="-webkit-tap-highlight-color: transparent;"></body>
 </html>
