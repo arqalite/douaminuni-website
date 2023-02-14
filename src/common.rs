@@ -1,12 +1,20 @@
 use dioxus::prelude::*;
 use dioxus_router::Link;
 
+pub fn Separator(cx: Scope) -> Element {
+    render!(
+        span {
+            class: "border-zinc-700 w-full border mt-4"
+        }
+    )
+}
+
 pub fn NavBar(cx: Scope) -> Element {
     let show_mobile_menu = use_state(cx, || false);
 
     render!(
         div {
-            class: "fixed flex flex-col",
+            class: "z-10 fixed flex flex-col",
             header {
                 class: "flex flex-row place-content-between items-center w-screen bg-zinc-900 px-8 h-16 border-b border-zinc-700",
                 Logo {}
@@ -106,4 +114,125 @@ pub fn Footer(cx: Scope) -> Element {
             }
         }
     )
+}
+
+pub struct Room<'a> {
+    pub name: &'a str,
+    pub size: RoomType,
+    pub index: usize,
+    pub photos: Vec<&'a str>
+}
+#[derive(Debug, PartialEq, Clone, Copy)]
+pub enum RoomType {
+    Double,
+    Triple,
+    Quadruple
+}
+
+pub fn construct_rooms() -> Vec<Room<'static>> {
+    vec![
+        Room {
+            name: "Camera 1",
+            size: RoomType::Triple,
+            index: 0,
+            photos: vec!["assets/camera_1.jpg","assets/camera_2.jpg","assets/camera_4.jpg"]
+        },
+        Room {
+            name: "Camera 2",
+            size: RoomType::Double,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+
+        },
+        Room {
+            name: "Camera 3",
+            size: RoomType::Quadruple,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 4",
+            size: RoomType::Triple,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 5",
+            size: RoomType::Triple,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 6",
+            size: RoomType::Triple,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 7",
+            size: RoomType::Triple,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 8",
+            size: RoomType::Double,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 9",
+            size: RoomType::Double,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 10",
+            size: RoomType::Triple,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 11",
+            size: RoomType::Quadruple,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 12",
+            size: RoomType::Double,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 14",
+            size: RoomType::Triple,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 15",
+            size: RoomType::Double,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 16",
+            size: RoomType::Double,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 17",
+            size: RoomType::Triple,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+        Room {
+            name: "Camera 18",
+            size: RoomType::Double,
+            index: 0,
+            photos: vec!["assets/empty.jpg"]
+        },
+    ]
 }

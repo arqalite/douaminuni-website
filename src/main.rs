@@ -5,6 +5,7 @@ use dioxus_router::{Redirect, Route, Router};
 
 mod common;
 mod home;
+mod rooms;
 
 fn main() {
     dioxus_web::launch(App);
@@ -22,7 +23,7 @@ fn App(cx: Scope) -> Element {
             Route {
                 to: "/camere",
                 common::NavBar {},
-                //HomePage {},
+                rooms::RoomsPage {},
                 common::Footer {},
             },
             Redirect {
