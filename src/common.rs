@@ -16,7 +16,7 @@ pub fn NavBar(cx: Scope) -> Element {
         div {
             class: "z-10 fixed flex flex-col",
             header {
-                class: "flex flex-row place-content-between items-center w-screen bg-zinc-900 px-8 h-16 border-b border-zinc-700",
+                class: "flex flex-row place-content-between items-center w-screen bg-zinc-900 px-8 h-16",
                 Logo {}
                 Menu {
                     on_click: move |_: MouseEvent| show_mobile_menu.set(!show_mobile_menu)
@@ -100,7 +100,7 @@ pub fn Logo(cx: Scope) -> Element {
 pub fn Footer(cx: Scope) -> Element {
     render!(
         div {
-            class: "flex flex-col gap-2 h-16 py-2 text-gold-100 items-center border-t-2 border-zinc-600 ",
+            class: "flex flex-col gap-2 h-16 my-4 py-2 text-gold-100 items-center border-t-2 border-zinc-600 ",
             p {
                 "© 2023 Vila Doua Minuni"
             }

@@ -1,9 +1,10 @@
 use dioxus::prelude::*;
+use crate::common::Separator;
 
 pub fn HomePage(cx: Scope) -> Element {
     render!(
         section {
-            class: "flex flex-col w-screen text-white mt-16",
+            class: "flex flex-col text-white mt-16",
             HeroBanner {},
             MainDescription {},
             RoomsDescription {},
@@ -14,12 +15,9 @@ pub fn HomePage(cx: Scope) -> Element {
 
 pub fn HeroBanner(cx: Scope) -> Element {
     render!(
-        div {
-            class: "w-full",
-            img {
-                src: "assets/banner.jpg",
-                class: "w-full h-min"
-            }
+        img {
+            src: "assets/banner.jpg",
+            class: "w-max"
         }
     )
 }
@@ -36,9 +34,7 @@ pub fn MainDescription(cx: Scope) -> Element {
                 class: "text-center text-zinc-200 lg:w-3/5",
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque id sem turpis. Duis aliquet ipsum ut eros iaculis malesuada. Nullam ornare mi pulvinar nisl pulvinar, ac pulvinar leo commodo. Fusce."
             }
-            span {
-                class: "border-zinc-700 w-full border mt-4"
-            }
+            Separator {}
         }
     )
 }
@@ -91,9 +87,7 @@ pub fn RoomsDescription(cx: Scope) -> Element {
                     }
                 }
             },
-            span {
-                class: "border-zinc-700 w-full border"
-            }
+            Separator {}
         }
     )
 }
