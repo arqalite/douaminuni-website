@@ -6,7 +6,12 @@ public_url = "/"
 
 [serve]
 # The address to serve on.
-address = "127.0.0.3"
+address = "192.168.100.6"
 # The port to serve on.
 port = 8080
-open = true
+open = false
+
+[[hooks]]
+stage = "pre_build"
+command = "tailwindcss"
+command_arguments = ["-c", "src/tailwind.config.js", "-i", "src/input.css", "-o", "assets/style.css", "--minify"]
